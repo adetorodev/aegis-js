@@ -8,7 +8,7 @@
 ## Quick Start
 
 ```bash
-npm install @aegis-ai/core @aegis-ai/adapters @aegis-ai/scorers
+npm install @aegis-monitor/core @aegis-monitor/adapters @aegis-monitor/scorers
 ```
 
 ## Provider-Specific Installation
@@ -16,19 +16,19 @@ npm install @aegis-ai/core @aegis-ai/adapters @aegis-ai/scorers
 ### OpenAI
 
 ```bash
-npm install @aegis-ai/adapters openai
+npm install @aegis-monitor/adapters openai
 ```
 
 ### Anthropic
 
 ```bash
-npm install @aegis-ai/adapters @anthropic-ai/sdk
+npm install @aegis-monitor/adapters @anthropic-ai/sdk
 ```
 
 ### Google
 
 ```bash
-npm install @aegis-ai/adapters @google/generative-ai
+npm install @aegis-monitor/adapters @google/generative-ai
 ```
 
 ## Full Installation
@@ -36,7 +36,7 @@ npm install @aegis-ai/adapters @google/generative-ai
 For the complete SDK including CLI:
 
 ```bash
-npm install @aegis-ai/core @aegis-ai/adapters @aegis-ai/scorers @aegis-ai/cost @aegis-ai/regression @aegis-ai/cli
+npm install @aegis-monitor/core @aegis-monitor/adapters @aegis-monitor/scorers @aegis-monitor/cost @aegis-monitor/regression @aegis-monitor/cli
 ```
 
 ## Monorepo Development

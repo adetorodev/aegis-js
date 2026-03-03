@@ -1,7 +1,7 @@
 {
-  "name": "@aegis-ai/scorers",
+  "name": "@aegis-monitor/scorers",
   "version": "0.0.1",
-  "description": "Scoring functions and composition for Aegis AI",
+  "description": "Scoring functions and composition for Aegis Monitor",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -28,13 +28,13 @@
     "scoring",
     "evaluation"
   ],
-  "author": "Aegis AI",
+  "author": "Aegis Monitor",
   "license": "MIT",
   "peerDependencies": {
-    "@aegis-ai/core": "file:../core"
+    "@aegis-monitor/core": "file:../core"
   },
   "devDependencies": {
-    "@aegis-ai/core": "file:../core",
+    "@aegis-monitor/core": "file:../core",
     "tsup": "^8.0.0",
     "typescript": "^5.3.0",
     "vitest": "^1.0.0"

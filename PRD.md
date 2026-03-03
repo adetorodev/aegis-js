@@ -1,7 +1,7 @@
 PRODUCT REQUIREMENTS DOCUMENT (PRD)
 2.1 Product Name
 
-Aegis AI – JS/TS SDK
+Aegis Monitor – JS/TS SDK
 
 2.2 Product Scope
 

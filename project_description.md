@@ -1,8 +1,8 @@
 PROJECT DESCRIPTION
-Aegis AI – JavaScript/TypeScript SDK (Library-Only)
+Aegis Monitor – JavaScript/TypeScript SDK (Library-Only)
 Overview
 
-Aegis AI is a TypeScript-first, provider-agnostic evaluation and governance library for Large Language Model (LLM) applications.
+Aegis Monitor is a TypeScript-first, provider-agnostic evaluation and governance library for Large Language Model (LLM) applications.
 
 It enables JavaScript and TypeScript applications to:
 
@@ -57,16 +57,16 @@ Most prompt changes go untested.
 Model upgrades are not benchmarked.
 Cost increases go unnoticed.
 
-Aegis AI solves this by introducing measurable discipline into LLM engineering.
+Aegis Monitor solves this by introducing measurable discipline into LLM engineering.
 
-Core Philosophy
+## Core Philosophy
 
 LLMs must be treated like production dependencies.
 
-If you wouldn’t deploy untested code,
-you shouldn’t deploy untested prompts.
+If you wouldn't deploy untested code,
+you shouldn't deploy untested prompts.
 
-What Aegis AI Is
+## What Aegis Monitor Is
 
 A typed SDK
 

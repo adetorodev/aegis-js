@@ -1,6 +1,6 @@
 /**
- * @aegis-ai/adapters
- * LLM provider adapters for Aegis AI
+ * @aegis-monitor/adapters
+ * LLM provider adapters for Aegis Monitor
  */
 
 export interface LLMAdapterConfig {

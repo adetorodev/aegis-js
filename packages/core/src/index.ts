@@ -1,6 +1,6 @@
 /**
- * @aegis-ai/core
- * Core evaluation orchestrator for Aegis AI
+ * @aegis-monitor/core
+ * Core evaluation orchestrator for Aegis Monitor
  */
 
 export interface GenerateInput {

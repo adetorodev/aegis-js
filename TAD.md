@@ -4,7 +4,7 @@ Client App
    |
    | uses
    v
-Aegis SDK
+Aegis Monitor SDK
    ├── Adapter Layer
    ├── Evaluation Engine
    ├── Scoring Engine
@@ -158,7 +158,7 @@ Prefer composition.
 
 4. Strategic Positioning
 
-Aegis AI JS is:
+Aegis Monitor JS is:
 
 The Jest for LLM prompts
 

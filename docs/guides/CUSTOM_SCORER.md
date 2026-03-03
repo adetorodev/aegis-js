@@ -5,7 +5,7 @@ Learn how to create custom scoring functions for your evaluation needs.
 ## Basic Scorer Implementation
 
 ```typescript
-import { Scorer } from '@aegis-ai/scorers';
+import { Scorer } from '@aegis-monitor/scorers';
 
 class CustomScorer implements Scorer {
   score(expected: string, actual: string): number {
@@ -28,7 +28,7 @@ class SemanticScorer implements Scorer {
   score(expected: string, actual: string): number {
     const expectedEmbedding = this.embeddingModel.embed(expected);
     const actualEmbedding = this.embeddingModel.embed(actual);
-    
+
     return this.cosineSimilarity(expectedEmbedding, actualEmbedding);
   }
 
@@ -47,7 +47,7 @@ class JSONScorer implements Scorer {
     try {
       const expectedJSON = JSON.parse(expected);
       const actualJSON = JSON.parse(actual);
-      
+
       return JSON.stringify(expectedJSON) === JSON.stringify(actualJSON) ? 1 : 0;
     } catch {
       return 0;

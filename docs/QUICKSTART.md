@@ -3,9 +3,9 @@
 ## Basic Evaluation
 
 ```typescript
-import { Evaluator } from '@aegis-ai/core';
-import { OpenAIAdapter } from '@aegis-ai/adapters';
-import { ExactMatchScorer } from '@aegis-ai/scorers';
+import { Evaluator } from '@aegis-monitor/core';
+import { OpenAIAdapter } from '@aegis-monitor/adapters';
+import { ExactMatchScorer } from '@aegis-monitor/scorers';
 
 // Load your dataset
 const dataset = {

@@ -1,6 +1,6 @@
 /**
- * @aegis-ai/cli
- * CLI for Aegis AI LLM evaluation
+ * @aegis-monitor/cli
+ * CLI for Aegis Monitor LLM evaluation
  */
 
 import { Command } from 'commander';
@@ -24,9 +24,12 @@ export async function baselineSaveCommand(): Promise<void> {
 }
 
 export function setupCLI(): void {
-  program.name('aegis').description('Aegis AI - LLM evaluation and governance').version('0.0.1');
+  program
+    .name('aegis-monitor')
+    .description('Aegis Monitor - LLM evaluation and governance')
+    .version('0.0.1');
 
-  program.command('init').description('Initialize Aegis project').action(initCommand);
+  program.command('init').description('Initialize Aegis Monitor project').action(initCommand);
 
   program.command('run').description('Run evaluation').action(runCommand);
 

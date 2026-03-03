@@ -1,7 +1,7 @@
 {
-  "name": "@aegis-ai/core",
+  "name": "@aegis-monitor/core",
   "version": "0.0.1",
-  "description": "Core evaluation orchestrator for Aegis AI",
+  "description": "Core evaluation orchestrator for Aegis Monitor",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -29,7 +29,7 @@
     "testing",
     "typescript"
   ],
-  "author": "Aegis AI",
+  "author": "Aegis Monitor",
   "license": "MIT",
   "devDependencies": {
     "tsup": "^8.0.0",

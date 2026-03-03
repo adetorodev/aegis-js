@@ -1,6 +1,6 @@
 /**
- * @aegis-ai/scorers
- * Scoring functions and composition for Aegis AI
+ * @aegis-monitor/scorers
+ * Scoring functions and composition for Aegis Monitor
  */
 
 export interface Scorer {

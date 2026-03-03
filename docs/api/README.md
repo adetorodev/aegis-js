@@ -1,6 +1,6 @@
 # API Reference Structure
 
-This directory contains API documentation for all Aegis packages.
+This directory contains API documentation for all Aegis Monitor packages.
 
 ## Packages
 

@@ -16,18 +16,18 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@aegis-ai/core": ["packages/core/src/index.ts"],
-      "@aegis-ai/core/*": ["packages/core/src/*"],
-      "@aegis-ai/adapters": ["packages/adapters/src/index.ts"],
-      "@aegis-ai/adapters/*": ["packages/adapters/src/*"],
-      "@aegis-ai/scorers": ["packages/scorers/src/index.ts"],
-      "@aegis-ai/scorers/*": ["packages/scorers/src/*"],
-      "@aegis-ai/cost": ["packages/cost/src/index.ts"],
-      "@aegis-ai/cost/*": ["packages/cost/src/*"],
-      "@aegis-ai/regression": ["packages/regression/src/index.ts"],
-      "@aegis-ai/regression/*": ["packages/regression/src/*"],
-      "@aegis-ai/cli": ["packages/cli/src/index.ts"],
-      "@aegis-ai/cli/*": ["packages/cli/src/*"]
+      "@aegis-monitor/core": ["packages/core/src/index.ts"],
+      "@aegis-monitor/core/*": ["packages/core/src/*"],
+      "@aegis-monitor/adapters": ["packages/adapters/src/index.ts"],
+      "@aegis-monitor/adapters/*": ["packages/adapters/src/*"],
+      "@aegis-monitor/scorers": ["packages/scorers/src/index.ts"],
+      "@aegis-monitor/scorers/*": ["packages/scorers/src/*"],
+      "@aegis-monitor/cost": ["packages/cost/src/index.ts"],
+      "@aegis-monitor/cost/*": ["packages/cost/src/*"],
+      "@aegis-monitor/regression": ["packages/regression/src/index.ts"],
+      "@aegis-monitor/regression/*": ["packages/regression/src/*"],
+      "@aegis-monitor/cli": ["packages/cli/src/index.ts"],
+      "@aegis-monitor/cli/*": ["packages/cli/src/*"]
     }
   },
   "include": ["packages/*/src/**/*.ts"]

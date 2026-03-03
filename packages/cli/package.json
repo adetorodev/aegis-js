@@ -1,13 +1,13 @@
 {
-  "name": "@aegis-ai/cli",
+  "name": "@aegis-monitor/cli",
   "version": "0.0.1",
-  "description": "CLI for Aegis AI LLM evaluation",
+  "description": "CLI for Aegis Monitor LLM evaluation",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "aegis": "dist/cli.cjs"
+    "aegis-monitor": "dist/cli.cjs"
   },
   "exports": {
     ".": {
@@ -32,14 +32,14 @@
     "evaluation",
     "testing"
   ],
-  "author": "Aegis AI",
+  "author": "Aegis Monitor",
   "license": "MIT",
   "dependencies": {
-    "@aegis-ai/core": "file:../core",
-    "@aegis-ai/adapters": "file:../adapters",
-    "@aegis-ai/scorers": "file:../scorers",
-    "@aegis-ai/cost": "file:../cost",
-    "@aegis-ai/regression": "file:../regression",
+    "@aegis-monitor/core": "file:../core",
+    "@aegis-monitor/adapters": "file:../adapters",
+    "@aegis-monitor/scorers": "file:../scorers",
+    "@aegis-monitor/cost": "file:../cost",
+    "@aegis-monitor/regression": "file:../regression",
     "commander": "^12.1.0"
   },
   "devDependencies": {

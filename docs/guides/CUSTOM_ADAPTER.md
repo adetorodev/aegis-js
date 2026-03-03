@@ -1,11 +1,11 @@
 # Custom Adapter Guide
 
-Learn how to create custom LLM adapters for providers not included in Aegis.
+Learn how to create custom LLM adapters for providers not included in Aegis Monitor.
 
 ## Basic Adapter Implementation
 
 ```typescript
-import { LLMAdapter, GenerateInput, GenerateOutput } from '@aegis-ai/core';
+import { LLMAdapter, GenerateInput, GenerateOutput } from '@aegis-monitor/core';
 
 class MyCustomAdapter implements LLMAdapter {
   constructor(private apiKey: string, private model: string) {}

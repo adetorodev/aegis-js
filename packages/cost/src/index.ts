@@ -1,6 +1,6 @@
 /**
- * @aegis-ai/cost
- * Cost calculation and tracking for Aegis AI
+ * @aegis-monitor/cost
+ * Cost calculation and tracking for Aegis Monitor
  */
 
 export interface PricingModel {

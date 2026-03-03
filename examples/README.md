@@ -1,6 +1,6 @@
 # Examples
 
-This directory contains example projects demonstrating Aegis AI usage.
+This directory contains example projects demonstrating Aegis Monitor usage.
 
 ## Available Examples
 

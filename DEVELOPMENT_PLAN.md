@@ -1,4 +1,4 @@
-# Aegis monitor – Development Plan
+# Aegis Monitor – Development Plan
 
 ## Overview
 Comprehensive development roadmap for building a TypeScript-first, provider-agnostic LLM evaluation and governance SDK.

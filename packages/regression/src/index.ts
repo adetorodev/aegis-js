@@ -1,6 +1,6 @@
 /**
- * @aegis-ai/regression
- * Regression detection and baseline management for Aegis AI
+ * @aegis-monitor/regression
+ * Regression detection and baseline management for Aegis Monitor
  */
 
 export interface BaselineMetrics {

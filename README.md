@@ -1,10 +1,10 @@
-# Aegis AI – JavaScript/TypeScript SDK
+# Aegis Monitor – JavaScript/TypeScript SDK
 
 > A TypeScript-first, provider-agnostic evaluation and governance library for Large Language Model (LLM) applications.
 
 ## Overview
 
-Aegis AI enables JavaScript and TypeScript applications to:
+Aegis Monitor enables JavaScript and TypeScript applications to:
 
 - **Evaluate** prompts against datasets
 - **Track** token usage and cost
@@ -32,7 +32,7 @@ This is a **pure SDK** – no dashboard, no hosted service, no telemetry.
 ## Installation
 
 ```bash
-npm install @aegis-ai/core @aegis-ai/adapters @aegis-ai/scorers
+npm install @aegis-monitor/core @aegis-monitor/adapters @aegis-monitor/scorers
 ```
 
 [Full installation guide](./docs/INSTALLATION.md)
@@ -40,9 +40,9 @@ npm install @aegis-ai/core @aegis-ai/adapters @aegis-ai/scorers
 ## Quick Start
 
 ```typescript
-import { Evaluator } from '@aegis-ai/core';
-import { OpenAIAdapter } from '@aegis-ai/adapters';
-import { ExactMatchScorer } from '@aegis-ai/scorers';
+import { Evaluator } from '@aegis-monitor/core';
+import { OpenAIAdapter } from '@aegis-monitor/adapters';
+import { ExactMatchScorer } from '@aegis-monitor/scorers';
 
 const dataset = {
   cases: [
@@ -75,7 +75,7 @@ console.log(result.metrics);
 ## Architecture
 
 ```
-Aegis SDK
+Aegis Monitor SDK
 ├── Adapter Layer (OpenAI, Anthropic, Google)
 ├── Evaluation Engine
 ├── Scoring Engine
