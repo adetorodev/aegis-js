@@ -1,0 +1,54 @@
+{
+  "name": "@aegis-ai/monorepo",
+  "version": "0.0.0",
+  "description": "Aegis AI - TypeScript/JavaScript SDK for LLM evaluation and governance",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm-run-all --parallel build:*",
+    "build:core": "npm run build --workspace=@aegis-ai/core",
+    "build:adapters": "npm run build --workspace=@aegis-ai/adapters",
+    "build:scorers": "npm run build --workspace=@aegis-ai/scorers",
+    "build:cost": "npm run build --workspace=@aegis-ai/cost",
+    "build:regression": "npm run build --workspace=@aegis-ai/regression",
+    "build:cli": "npm run build --workspace=@aegis-ai/cli",
+    "test": "npm-run-all test:*",
+    "test:core": "npm run test --workspace=@aegis-ai/core",
+    "test:adapters": "npm run test --workspace=@aegis-ai/adapters",
+    "test:scorers": "npm run test --workspace=@aegis-ai/scorers",
+    "test:cost": "npm run test --workspace=@aegis-ai/cost",
+    "test:regression": "npm run test --workspace=@aegis-ai/regression",
+    "test:cli": "npm run test --workspace=@aegis-ai/cli",
+    "lint": "eslint packages --ext .ts,.tsx",
+    "format": "prettier --write packages/**/*.ts packages/**/*.json",
+    "format:check": "prettier --check packages/**/*.ts packages/**/*.json",
+    "type-check": "tsc --noEmit",
+    "clean": "npm-run-all --parallel clean:*",
+    "clean:core": "npm run clean --workspace=@aegis-ai/core",
+    "clean:adapters": "npm run clean --workspace=@aegis-ai/adapters",
+    "clean:scorers": "npm run clean --workspace=@aegis-ai/scorers",
+    "clean:cost": "npm run clean --workspace=@aegis-ai/cost",
+    "clean:regression": "npm run clean --workspace=@aegis-ai/regression",
+    "clean:cli": "npm run clean --workspace=@aegis-ai/cli",
+    "prepare": "husky install 2>/dev/null || true"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0",
+    "@vitest/ui": "^1.0.0",
+    "npm-run-all2": "^6.0.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.0.0",
+    "husky": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
