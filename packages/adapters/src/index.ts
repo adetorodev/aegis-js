@@ -3,26 +3,13 @@
  * LLM provider adapters for Aegis Monitor
  */
 
-export interface LLMAdapterConfig {
-  apiKey: string;
-  model: string;
-}
+// Core exports
+export { BaseAdapter, AdapterConfig } from './base.js';
 
-// Placeholder exports - to be implemented in Phase 2
-export class OpenAIAdapter {
-  constructor(_config: LLMAdapterConfig) {
-    throw new Error('Not implemented');
-  }
-}
+// Provider adapters
+export { OpenAIAdapter } from './openai.js';
+export { AnthropicAdapter } from './anthropic.js';
+export { GoogleAdapter } from './google.js';
 
-export class AnthropicAdapter {
-  constructor(_config: LLMAdapterConfig) {
-    throw new Error('Not implemented');
-  }
-}
-
-export class GoogleAdapter {
-  constructor(_config: LLMAdapterConfig) {
-    throw new Error('Not implemented');
-  }
-}
+// Mock adapters for testing
+export { MockAdapter, FixedResponseAdapter, ErrorAdapter, MockAdapterFactory } from './mock.js';
