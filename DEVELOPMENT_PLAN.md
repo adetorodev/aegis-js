@@ -195,17 +195,17 @@ Comprehensive development roadmap for building a TypeScript-first, provider-agno
 
 ---
 
-## Phase 6: Regression Engine
+## Phase 6: Regression Engine ✅ COMPLETE
 
 ### 6.1 Baseline Management
-- [ ] `BaselineManager` implementation:
-  - Save baseline to `.aegis/baseline.json`
-  - Load baseline from file
-  - Create/update baseline from evaluation run
-  - Version baseline snapshots (optional)
+- [x] `BaselineManager` implementation:
+  - [x] Save baseline to `.aegis/baseline.json`
+  - [x] Load baseline from file
+  - [x] Create/update baseline from evaluation run
+  - [x] Version baseline metadata (`version` field)
 
 ### 6.2 Baseline Storage Format
-- [ ] Define baseline JSON schema:
+- [x] Define baseline JSON schema:
   ```json
   {
     "version": "1.0.0",
@@ -221,24 +221,24 @@ Comprehensive development roadmap for building a TypeScript-first, provider-agno
   ```
 
 ### 6.3 Regression Analyzer
-- [ ] `RegressionAnalyzer` implementation:
-  - Compare current run vs baseline
-  - Calculate deltas (absolute and percentage)
-  - Detect regressions
-- [ ] `ThresholdValidator`:
-  - Configurable thresholds per metric
-  - Threshold strategies (percentage drop, absolute drop)
+- [x] `RegressionAnalyzer` implementation:
+  - [x] Compare current run vs baseline
+  - [x] Calculate deltas (absolute and percentage)
+  - [x] Detect regressions
+- [x] `ThresholdValidator`:
+  - [x] Configurable thresholds per metric
+  - [x] Threshold strategies (percentage drop, absolute drop)
 
 ### 6.4 Regression Reporting
-- [ ] Structured regression report:
-  - Metric-by-metric comparison
-  - Pass/fail status
-  - CI-friendly output format
+- [x] Structured regression report:
+  - [x] Metric-by-metric comparison
+  - [x] Pass/fail status
+  - [x] CI-friendly output format (`passed` + `failures` fields)
 
 ### 6.5 Regression Tests
-- [ ] Baseline save/load tests
-- [ ] Regression detection tests
-- [ ] Threshold validation tests
+- [x] Baseline save/load tests
+- [x] Regression detection tests
+- [x] Threshold validation tests
 
 ---
 
