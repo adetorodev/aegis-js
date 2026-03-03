@@ -83,27 +83,31 @@ Comprehensive development roadmap for building a TypeScript-first, provider-agno
 
 ---
 
-## Phase 3: Scoring Engine
+## Phase 3: Scoring Engine ✅ COMPLETE
 
 ### 3.1 Scorer Interface & Composition
-- [ ] Define `Scorer` interface:
-  - `score(expected: string, actual: string): number (0-1)`
-- [ ] Create `CompositeScorer` for combining multiple scorers
-- [ ] Support scorer weighting
-- [ ] Implement scorer library utilities
+- [x] Define `Scorer` interface:
+  - [x] `score(expected: string, actual: string): number (0-1)`
+- [x] Create `CompositeScorer` for combining multiple scorers
+- [x] Support scorer weighting (weighted average)
+- [x] Implement scorer library utilities (MultiScorer)
 
 ### 3.2 Built-in Scorers
-- [ ] **Exact Match Scorer** – Binary match detection
-- [ ] **Fuzzy Match Scorer** – Levenshtein distance
-- [ ] **Semantic Similarity Scorer** – Embedding-based (optional: built-in or external)
-- [ ] **JSON Validity Scorer** – Validates JSON output structure
-- [ ] **Regex Scorer** – Pattern matching
-- [ ] **Custom Scorer** – User-provided function support
+- [x] **Exact Match Scorer** – Binary exact match detection
+- [x] **Case-Insensitive Exact Match Scorer** – Case-insensitive exact matching
+- [x] **Fuzzy Match Scorer** – Levenshtein distance with configurable threshold
+- [x] **JSON Validity Scorer** – Validates JSON structure (strict/non-strict modes)
+- [x] **JSON Schema Scorer** – Exact JSON equality matching
+- [x] **Regex Scorer** – Pattern matching against output
+- [x] **Regex Extractor Scorer** – Captures and validates extracted values
+- [x] **Token Similarity Scorer** – Jaccard similarity using word tokens
+- [x] **Semantic Similarity Scorer** – Token overlap with stopword filtering
+- [x] **Custom Scorer** – User-provided function support via factories
 
 ### 3.3 Scoring Tests
-- [ ] Unit tests for each scorer
-- [ ] Integration tests with real outputs
-- [ ] Edge case handling (empty strings, special characters)
+- [x] Unit tests for each scorer (47 test cases)
+- [x] Integration tests with real outputs
+- [x] Edge case handling (empty strings, special characters, Unicode)
 
 ---
 
