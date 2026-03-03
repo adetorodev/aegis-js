@@ -111,10 +111,10 @@ Comprehensive development roadmap for building a TypeScript-first, provider-agno
 
 ---
 
-## Phase 4: Dataset & Evaluation Engine
+## Phase 4: Dataset & Evaluation Engine ✅ COMPLETE
 
 ### 4.1 Dataset Structure
-- [ ] Define JSON dataset format:
+- [x] Define JSON dataset format:
   ```json
   {
     "cases": [
@@ -126,37 +126,37 @@ Comprehensive development roadmap for building a TypeScript-first, provider-agno
     ]
   }
   ```
-- [ ] Create dataset loader
-- [ ] Validation for dataset structure
-- [ ] Support for fixture files
+- [x] Create dataset loader (`DatasetLoader.loadFromFile`, `loadFromObject`)
+- [x] Validation for dataset structure (`validateDataset` + typed validation)
+- [x] Support for fixture files (JSON dataset loading from disk)
 
 ### 4.2 Core Evaluator
-- [ ] Implement `Evaluator` class:
-  - Accept dataset
-  - Accept adapter
-  - Accept scorer(s)
-  - Execute cases (sequential and parallel modes)
-- [ ] Implement concurrency control:
-  - Promise pool with configurable concurrency
-  - Rate limit awareness
-  - Exponential backoff on errors
-- [ ] Error handling modes:
-  - Fail-fast
-  - Continue-on-error with collection
+- [x] Implement `Evaluator` class:
+  - [x] Accept dataset
+  - [x] Accept adapter
+  - [x] Accept scorer(s)
+  - [x] Execute cases (sequential and parallel modes)
+- [x] Implement concurrency control:
+  - [x] Promise pool with configurable concurrency
+  - [x] Rate limit awareness
+  - [x] Exponential backoff on rate-limit errors
+- [x] Error handling modes:
+  - [x] Fail-fast
+  - [x] Continue-on-error with collection
 
 ### 4.3 Result Aggregation
-- [ ] Create `EvaluationResult` interface:
-  - Per-case results (score, latency, tokens, cost)
-  - Aggregated metrics (mean, min, max, std deviation)
-  - Errors and warnings
-  - Timestamp and metadata
-- [ ] Implement aggregation logic
+- [x] Create `EvaluationResult` interface:
+  - [x] Per-case results (score, latency, tokens, cost)
+  - [x] Aggregated metrics (mean, min, max, std deviation)
+  - [x] Errors and warnings
+  - [x] Timestamp and metadata
+- [x] Implement aggregation logic
 
 ### 4.4 Evaluator Tests
-- [ ] Mock dataset execution
-- [ ] Concurrency tests
-- [ ] Error handling tests
-- [ ] Aggregation correctness tests
+- [x] Mock dataset execution
+- [x] Concurrency tests
+- [x] Error handling tests
+- [x] Aggregation correctness tests
 
 ---
 

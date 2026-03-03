@@ -169,20 +169,32 @@ export interface Scorer {
  * Main evaluator class for running evaluations
  */
 export class Evaluator {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private impl?: any;
+
   constructor(
-    private _adapter: ILLMAdapter,
-    private _scorers: Scorer[]
-  ) {}
+    private adapter: ILLMAdapter,
+    private scorers: Scorer[],
+    private config?: import('./evaluator-impl.js').EvaluatorConfig
+  ) {
+    if (scorers.length === 0) {
+      throw new Error('Evaluator requires at least one scorer');
+    }
+  }
 
   /**
    * Run evaluation on a dataset
    * @param dataset The dataset to evaluate
    * @returns Evaluation results
    */
-  async evaluate(_dataset: Dataset): Promise<EvaluationResult> {
-    void this._adapter;
-    void this._scorers;
-    throw new Error('Not implemented');
+  async evaluate(dataset: Dataset): Promise<EvaluationResult> {
+    // Lazy load and instantiate implementation
+    if (!this.impl) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { EvaluatorImpl } = await import('./evaluator-impl.js');
+      this.impl = new EvaluatorImpl(this.adapter, this.scorers, this.config);
+    }
+    return this.impl.evaluate(dataset);
   }
 }
 
@@ -204,3 +216,9 @@ export class BaselineManager {
     throw new Error('Not implemented');
   }
 }
+
+// Export evaluator types and utilities
+export type { EvaluatorConfig } from './evaluator-impl.js';
+export { ErrorHandlingMode } from './evaluator-impl.js';
+export { PromisePool, validateDataset, calculateStdDeviation } from './utils.js';
+export { DatasetLoader } from './dataset.js';
