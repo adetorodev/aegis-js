@@ -9,7 +9,7 @@ export interface Scorer {
 
 // Placeholder exports - to be implemented in Phase 3
 export class ExactMatchScorer implements Scorer {
-  score(expected: string, actual: string): number {
+  score(_expected: string, _actual: string): number {
     throw new Error('Not implemented');
   }
 }
@@ -19,7 +19,7 @@ export class CompositeScorer implements Scorer {
     throw new Error('Not implemented');
   }
 
-  score(expected: string, actual: string): number {
+  score(_expected: string, _actual: string): number {
     throw new Error('Not implemented');
   }
 }

@@ -35,11 +35,12 @@
   "author": "Aegis AI",
   "license": "MIT",
   "dependencies": {
-    "@aegis-ai/core": "workspace:^0.0.1",
-    "@aegis-ai/adapters": "workspace:^0.0.1",
-    "@aegis-ai/scorers": "workspace:^0.0.1",
-    "@aegis-ai/cost": "workspace:^0.0.1",
-    "@aegis-ai/regression": "workspace:^0.0.1"
+    "@aegis-ai/core": "file:../core",
+    "@aegis-ai/adapters": "file:../adapters",
+    "@aegis-ai/scorers": "file:../scorers",
+    "@aegis-ai/cost": "file:../cost",
+    "@aegis-ai/regression": "file:../regression",
+    "commander": "^12.1.0"
   },
   "devDependencies": {
     "tsup": "^8.0.0",

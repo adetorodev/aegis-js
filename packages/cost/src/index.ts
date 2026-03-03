@@ -18,11 +18,7 @@ export class CostCalculator {
     throw new Error('Not implemented');
   }
 
-  calculateCost(
-    _model: string,
-    _inputTokens: number,
-    _outputTokens: number
-  ): number {
+  calculateCost(_model: string, _inputTokens: number, _outputTokens: number): number {
     throw new Error('Not implemented');
   }
 }

@@ -65,11 +65,13 @@ export interface EvaluationResult {
  */
 export class Evaluator {
   constructor(
-    private adapter: LLMAdapter,
-    private scorers: Scorer[]
+    private _adapter: LLMAdapter,
+    private _scorers: Scorer[]
   ) {}
 
-  async evaluate(dataset: Dataset): Promise<EvaluationResult> {
+  async evaluate(_dataset: Dataset): Promise<EvaluationResult> {
+    void this._adapter;
+    void this._scorers;
     throw new Error('Not implemented');
   }
 }
@@ -79,7 +81,7 @@ export interface Scorer {
 }
 
 export class BaselineManager {
-  async saveBaseline(result: EvaluationResult): Promise<void> {
+  async saveBaseline(_result: EvaluationResult): Promise<void> {
     throw new Error('Not implemented');
   }
 

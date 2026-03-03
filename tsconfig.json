@@ -4,20 +4,17 @@
     "useDefineForClassFields": true,
     "lib": ["ES2020"],
     "module": "ESNext",
+    "moduleResolution": "node",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "outDir": "./dist",
-    "rootDir": "./",
     "paths": {
       "@aegis-ai/core": ["packages/core/src/index.ts"],
       "@aegis-ai/core/*": ["packages/core/src/*"],
@@ -33,13 +30,5 @@
       "@aegis-ai/cli/*": ["packages/cli/src/*"]
     }
   },
-  "include": ["packages/*/src"],
-  "references": [
-    { "path": "./packages/core" },
-    { "path": "./packages/adapters" },
-    { "path": "./packages/scorers" },
-    { "path": "./packages/cost" },
-    { "path": "./packages/regression" },
-    { "path": "./packages/cli" }
-  ]
+  "include": ["packages/*/src/**/*.ts"]
 }

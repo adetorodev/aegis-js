@@ -24,25 +24,13 @@ export async function baselineSaveCommand(): Promise<void> {
 }
 
 export function setupCLI(): void {
-  program
-    .name('aegis')
-    .description('Aegis AI - LLM evaluation and governance')
-    .version('0.0.1');
+  program.name('aegis').description('Aegis AI - LLM evaluation and governance').version('0.0.1');
 
-  program
-    .command('init')
-    .description('Initialize Aegis project')
-    .action(initCommand);
+  program.command('init').description('Initialize Aegis project').action(initCommand);
 
-  program
-    .command('run')
-    .description('Run evaluation')
-    .action(runCommand);
+  program.command('run').description('Run evaluation').action(runCommand);
 
-  program
-    .command('compare')
-    .description('Compare with baseline')
-    .action(compareCommand);
+  program.command('compare').description('Compare with baseline').action(compareCommand);
 
   program
     .command('baseline')

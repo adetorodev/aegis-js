@@ -54,10 +54,7 @@ export class BaselineManager {
 }
 
 export class RegressionAnalyzer {
-  compare(
-    _baseline: BaselineMetrics,
-    _current: BaselineMetrics
-  ): RegressionReport {
+  compare(_baseline: BaselineMetrics, _current: BaselineMetrics): RegressionReport {
     throw new Error('Not implemented');
   }
 }
