@@ -160,14 +160,14 @@ Comprehensive development roadmap for building a TypeScript-first, provider-agno
 
 ---
 
-## Phase 5: Cost Engine
+## Phase 5: Cost Engine ✅ COMPLETE
 
 ### 5.1 Pricing Registry
-- [ ] Create `PricingRegistry` with:
-  - Per-model pricing (input/output token rates)
-  - Support for major providers (OpenAI, Anthropic, Google)
-  - Ability to override/extend pricing
-- [ ] Implement pricing data structure:
+- [x] Create `PricingRegistry` with:
+  - [x] Per-model pricing (input/output token rates)
+  - [x] Support for major providers (OpenAI, Anthropic, Google)
+  - [x] Ability to override/extend pricing
+- [x] Implement pricing data structure:
   ```json
   {
     "gpt-4": {
@@ -178,20 +178,20 @@ Comprehensive development roadmap for building a TypeScript-first, provider-agno
   ```
 
 ### 5.2 Cost Calculator
-- [ ] Implement cost calculation:
-  - Per-request cost = (inputTokens × inputPrice) + (outputTokens × outputPrice)
-  - Aggregated cost per run
-  - Cost with margin/markup support
-- [ ] Add currency support
+- [x] Implement cost calculation:
+  - [x] Per-request cost = (inputTokens × inputPrice) + (outputTokens × outputPrice)
+  - [x] Aggregated cost per run
+  - [x] Cost with margin/markup support
+- [x] Add currency support
 
 ### 5.3 Cost Validation
-- [ ] Threshold validation (warn/fail if over budget)
-- [ ] Cost per-case breakdown
-- [ ] Cumulative cost tracking
+- [x] Threshold validation (warn/fail if over budget)
+- [x] Cost per-case breakdown
+- [x] Cumulative cost tracking
 
 ### 5.4 Cost Tests
-- [ ] Unit tests for pricing calculation
-- [ ] Integration tests with real token counts
+- [x] Unit tests for pricing calculation
+- [x] Integration tests with real token counts
 
 ---
 
