@@ -5,78 +5,81 @@ Comprehensive development roadmap for building a TypeScript-first, provider-agno
 
 ---
 
-## Phase 1: Foundation & Project Setup
+## Phase 1: Foundation & Project Setup ✅ COMPLETE
 
 ### 1.1 Repository & Monorepo Structure
-- [ ] Initialize monorepo (npm workspaces or pnpm)
-- [ ] Set up root package.json with shared dependencies
-- [ ] Configure TypeScript root tsconfig with path mappings
-- [ ] Set up ESLint, Prettier, and other dev tools
-- [ ] Create .gitignore with node_modules, dist, .aegis/
-- [ ] Initialize Git and establish branch strategy
+- [x] Initialize monorepo (npm workspaces or pnpm)
+- [x] Set up root package.json with shared dependencies
+- [x] Configure TypeScript root tsconfig with path mappings
+- [x] Set up ESLint, Prettier, and other dev tools
+- [x] Create .gitignore with node_modules, dist, .aegis/
+- [x] Initialize Git and establish branch strategy
 
 **Packages to create:**
-- [ ] `packages/core` – Core evaluation orchestrator
-- [ ] `packages/adapters` – Provider adapter implementations
-- [ ] `packages/scorers` – Scoring functions
-- [ ] `packages/cost` – Pricing and cost calculation
-- [ ] `packages/regression` – Regression detection engine
-- [ ] `packages/cli` – Command-line interface
+- [x] `packages/core` – Core evaluation orchestrator
+- [x] `packages/adapters` – Provider adapter implementations
+- [x] `packages/scorers` – Scoring functions
+- [x] `packages/cost` – Pricing and cost calculation
+- [x] `packages/regression` – Regression detection engine
+- [x] `packages/cli` – Command-line interface
 
 ### 1.2 Build & Publish Infrastructure
-- [ ] Configure TypeScript compilation (ESM + CJS output)
-- [ ] Set up build scripts for each package
-- [ ] Configure package.json exports for tree-shaking
-- [ ] Set up release automation (versioning, publishing)
-- [ ] Create GitHub Actions workflows
+- [x] Configure TypeScript compilation (ESM + CJS output)
+- [x] Set up build scripts for each package
+- [x] Configure package.json exports for tree-shaking
+- [x] Set up release automation (versioning, publishing)
+- [x] Create GitHub Actions workflows
 
 ### 1.3 Documentation Structure
-- [ ] Create `/docs` folder structure
-- [ ] API documentation template
-- [ ] Installation guide template
-- [ ] Examples directory setup
+- [x] Create `/docs` folder structure
+- [x] API documentation template
+- [x] Installation guide template
+- [x] Examples directory setup
 
 ---
 
-## Phase 2: Core Adapter Infrastructure
+## Phase 2: Core Adapter Infrastructure ✅ COMPLETE
 
 ### 2.1 Define Adapter Interfaces
-- [ ] Create `LLMAdapter` interface
-  - `generate(input: GenerateInput): Promise<GenerateOutput>`
-  - Input/output normalization
-  - Token tracking (inputTokens, outputTokens)
-  - Latency measurement
-- [ ] Create `GenerateInput` interface (prompt, model, params)
-- [ ] Create `GenerateOutput` interface (text, inputTokens, outputTokens, latencyMs)
-- [ ] Error handling standardization
+- [x] Create `ILLMAdapter` interface
+  - [x] `generate(input: GenerateInput): Promise<GenerateOutput>`
+  - [x] Input/output normalization
+  - [x] Token tracking (inputTokens, outputTokens)
+  - [x] Latency measurement
+- [x] Create `GenerateInput` interface (prompt, model, params)
+- [x] Create `GenerateOutput` interface (text, inputTokens, outputTokens, latencyMs)
+- [x] Error handling standardization (AdapterError, RateLimitError classes)
 
 ### 2.2 OpenAI Adapter Implementation
-- [ ] Implement OpenAIAdapter with:
-  - API key configuration
-  - Model selection (gpt-4, gpt-3.5-turbo, etc.)
-  - Token counting
-  - Cost calculation integration
-  - Error mapping
-- [ ] Add retry logic with exponential backoff
-- [ ] Support streaming and non-streaming modes
-- [ ] Unit tests for request/response normalization
+- [x] Implement OpenAIAdapter with:
+  - [x] API key configuration
+  - [x] Model selection (gpt-4, gpt-3.5-turbo, etc.)
+  - [x] Token counting
+  - [x] Error mapping (429 rate limits, 401 auth, API errors)
+- [x] Add retry logic with exponential backoff (3 retries, configurable)
+- [x] Lazy SDK loading to avoid hard dependencies
+- [x] Unit tests for request/response normalization
 
 ### 2.3 Anthropic Adapter Implementation
-- [ ] Implement AnthropicAdapter
-- [ ] Token counting with Claude models
-- [ ] Cost calculation
-- [ ] Error handling for rate limits
+- [x] Implement AnthropicAdapter
+- [x] Token counting with Claude models
+- [x] Error handling for rate limits (rate_limit_error, authentication_error)
+- [x] Content type validation
 
 ### 2.4 Google Adapter Implementation
-- [ ] Implement GoogleAdapter (Gemini)
-- [ ] Token counting
-- [ ] Cost calculation
-- [ ] Error handling
+- [x] Implement GoogleAdapter (Gemini)
+- [x] Token counting with estimation (chars / 3.5)
+- [x] Error handling (429, PERMISSION_DENIED)
+- [x] Lazy SDK loading
 
 ### 2.5 Adapter Testing
-- [ ] Mock adapter factory for testing without API calls
-- [ ] Mock response generators
-- [ ] Adapter test suite (shared interface compliance)
+- [x] Mock adapter factory for testing without API calls
+- [x] Mock response generators (MockAdapter, FixedResponseAdapter, ErrorAdapter)
+- [x] Comprehensive test suite (11 tests) covering:
+  - [x] MockAdapterFactory methods (default, withResponse, withGenerator, failing)
+  - [x] BaseAdapter retry logic
+  - [x] Latency measurement
+  - [x] Error handling (AdapterError, RateLimitError)
 
 ---
 
