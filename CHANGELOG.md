@@ -7,6 +7,6 @@ The format is based on Keep a Changelog, and this project follows Semantic Versi
 ## [Unreleased]
 
 ### Added
-- Phase 8 integration and cross-package test suite.
-- Phase 9 documentation and runnable examples.
-- Phase 10 release preparation scripts and workflows.
+- integration and cross-package test suite.
+- documentation and runnable examples.
+- release preparation scripts and workflows.
