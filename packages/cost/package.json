@@ -1,8 +1,7 @@
 {
   "name": "@aegis-monitor/cost",
   "version": "0.0.1",
-  "description": "Cost calculation and tracking for Aegis Monitor",
-  "type": "module",
+  "description": "Cost calculation and tracking for Aegis Monitor",  "license": "MIT",  "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",

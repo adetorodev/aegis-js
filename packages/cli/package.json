@@ -1,8 +1,7 @@
 {
   "name": "@aegis-monitor/cli",
   "version": "0.0.1",
-  "description": "CLI for Aegis Monitor LLM evaluation",
-  "type": "module",
+  "description": "CLI for Aegis Monitor LLM evaluation",  "license": "MIT",  "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",

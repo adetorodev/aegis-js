@@ -2,6 +2,7 @@
   "name": "@aegis-monitor/monorepo",
   "version": "0.0.0",
   "description": "Aegis Monitor - TypeScript/JavaScript SDK for LLM evaluation and governance",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "workspaces": [

@@ -2,6 +2,7 @@
   "name": "@aegis-monitor/regression",
   "version": "0.0.1",
   "description": "Regression detection and baseline management for Aegis Monitor",
+  "license": "MIT",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",

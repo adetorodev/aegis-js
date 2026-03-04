@@ -2,6 +2,7 @@
   "name": "@aegis-monitor/scorers",
   "version": "0.0.1",
   "description": "Scoring functions and composition for Aegis Monitor",
+  "license": "MIT",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
