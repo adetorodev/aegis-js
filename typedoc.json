@@ -1,0 +1,20 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "packages/core/src/index.ts",
+    "packages/adapters/src/index.ts",
+    "packages/scorers/src/index.ts",
+    "packages/cost/src/index.ts",
+    "packages/regression/src/index.ts",
+    "packages/cli/src/index.ts"
+  ],
+  "out": "docs/api/reference",
+  "tsconfig": "tsconfig.json",
+  "plugin": [],
+  "excludePrivate": true,
+  "excludeProtected": false,
+  "excludeExternals": true,
+  "readme": "none",
+  "categorizeByGroup": true,
+  "sort": ["source-order"]
+}

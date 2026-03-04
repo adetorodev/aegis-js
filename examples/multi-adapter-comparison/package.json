@@ -1,0 +1,8 @@
+{
+  "name": "aegis-example-multi-adapter-comparison",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "example": "tsx index.ts"
+  }
+}

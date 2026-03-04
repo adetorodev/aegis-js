@@ -148,7 +148,9 @@ export function createAdapter(config: CLIConfig): ILLMAdapter {
         ? MockAdapterFactory.withResponse(adapter.mockResponse)
         : MockAdapterFactory.default();
     default:
-      throw new Error(`Unsupported adapter provider: ${(adapter as { provider: string }).provider}`);
+      throw new Error(
+        `Unsupported adapter provider: ${(adapter as { provider: string }).provider}`
+      );
   }
 }
 
@@ -190,7 +192,10 @@ export function createScorers(config: CLIConfig): Scorer[] {
   return scorers;
 }
 
-export function applyCostToEvaluation(result: EvaluationResult, config: CLIConfig): EvaluationResult {
+export function applyCostToEvaluation(
+  result: EvaluationResult,
+  config: CLIConfig
+): EvaluationResult {
   const registry = new PricingRegistry();
   const calculator = new CostCalculator(registry);
   const model = config.adapter.model ?? 'gpt-4';
@@ -341,8 +346,12 @@ export async function compareCommand(
       ctx.stdout(JSON.stringify(report, null, 2));
     } else {
       ctx.stdout(`Comparison result: ${report.passed ? 'PASS' : 'FAIL'}`);
-      ctx.stdout(`Score delta: ${report.score.delta.toFixed(6)} (${report.score.deltaPercent.toFixed(2)}%)`);
-      ctx.stdout(`Cost delta: ${report.cost.delta.toFixed(6)} (${report.cost.deltaPercent.toFixed(2)}%)`);
+      ctx.stdout(
+        `Score delta: ${report.score.delta.toFixed(6)} (${report.score.deltaPercent.toFixed(2)}%)`
+      );
+      ctx.stdout(
+        `Cost delta: ${report.cost.delta.toFixed(6)} (${report.cost.deltaPercent.toFixed(2)}%)`
+      );
       ctx.stdout(
         `Latency delta: ${report.latency.delta.toFixed(2)}ms (${report.latency.deltaPercent.toFixed(2)}%)`
       );

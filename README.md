@@ -68,8 +68,10 @@ console.log(result.metrics);
 - [Installation Guide](./docs/INSTALLATION.md)
 - [Quick Start](./docs/QUICKSTART.md)
 - [API Reference](./docs/api/)
+- [Provider Setup](./docs/guides/PROVIDER_SETUP.md)
 - [Custom Scorers](./docs/guides/CUSTOM_SCORER.md)
 - [Custom Adapters](./docs/guides/CUSTOM_ADAPTER.md)
+- [CI/CD Integration](./docs/guides/CI_CD.md)
 - [Examples](./examples/)
 
 ## Architecture
@@ -82,6 +84,15 @@ Aegis Monitor SDK
 ├── Cost Engine
 ├── Regression Engine
 └── CLI Wrapper
+```
+
+## CLI
+
+```bash
+npx aegis-monitor init
+npx aegis-monitor run --config aegis.config.ts
+npx aegis-monitor baseline save --config aegis.config.ts
+npx aegis-monitor compare --config aegis.config.ts
 ```
 
 ## Development
@@ -122,6 +133,6 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ---
 
-**Status**: Phase 1 – Foundation & Project Setup ✓ Complete
+**Status**: Phases 1-8 Complete
 
-Next: Phase 2 – Core Adapter Infrastructure
+Current focus: Phase 9 Documentation & Examples + Phase 10 Release Preparation

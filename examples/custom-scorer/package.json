@@ -1,0 +1,8 @@
+{
+  "name": "aegis-example-custom-scorer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "example": "tsx index.ts"
+  }
+}

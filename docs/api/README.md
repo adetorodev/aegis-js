@@ -1,43 +1,32 @@
-# API Reference Structure
+# API Reference
 
-This directory contains API documentation for all Aegis Monitor packages.
+API documentation is generated with TypeDoc from public package entrypoints.
 
-## Packages
+## Generate docs
 
-- [Core](./core.md) - Main evaluation orchestrator
-- [Adapters](./adapters.md) - LLM provider integrations
-- [Scorers](./scorers.md) - Evaluation scoring functions
-- [Cost](./cost.md) - Cost calculation and tracking
-- [Regression](./regression.md) - Regression detection and baselines
-- [CLI](./cli.md) - Command-line interface
-
-## Key Interfaces
-
-### LLMAdapter
-
-```typescript
-interface LLMAdapter {
-  generate(input: GenerateInput): Promise<GenerateOutput>;
-}
+```bash
+npm run docs:api
 ```
 
-### Scorer
+Generated output is written to:
 
-```typescript
-interface Scorer {
-  score(expected: string, actual: string): number;
-}
-```
+- `docs/api/reference/`
 
-### EvaluationResult
+## Package entry points
 
-```typescript
-interface EvaluationResult {
-  cases: CaseResult[];
-  metrics: AggregatedMetrics;
-  timestamp: string;
-  errors: string[];
-}
-```
+- `@aegis-monitor/core`
+- `@aegis-monitor/adapters`
+- `@aegis-monitor/scorers`
+- `@aegis-monitor/cost`
+- `@aegis-monitor/regression`
+- `@aegis-monitor/cli`
 
-See individual package documentation for detailed API reference.
+## Core types to start with
+
+- `ILLMAdapter`
+- `Scorer`
+- `DatasetLoader`
+- `Evaluator`
+- `EvaluationResult`
+
+See guides in [docs/guides](../guides/) for end-to-end integration patterns.

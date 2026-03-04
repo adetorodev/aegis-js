@@ -1,72 +1,80 @@
 # Quick Start Guide
 
-## Basic Evaluation
+## 1) Install packages
+
+```bash
+npm install @aegis-monitor/core @aegis-monitor/adapters @aegis-monitor/scorers @aegis-monitor/cost @aegis-monitor/regression
+```
+
+## 2) Create a dataset
+
+```json
+{
+  "cases": [
+    { "input": "What is 2+2?", "expectedOutput": "4" },
+    { "input": "Capital of France", "expectedOutput": "Paris" }
+  ]
+}
+```
+
+## 3) Run an evaluation in code
 
 ```typescript
-import { Evaluator } from '@aegis-monitor/core';
-import { OpenAIAdapter } from '@aegis-monitor/adapters';
+import { DatasetLoader, Evaluator } from '@aegis-monitor/core';
+import { MockAdapterFactory } from '@aegis-monitor/adapters';
 import { ExactMatchScorer } from '@aegis-monitor/scorers';
 
-// Load your dataset
-const dataset = {
+const loader = new DatasetLoader();
+const dataset = loader.loadFromObject({
   cases: [
-    {
-      input: 'What is 2+2?',
-      expectedOutput: '4',
-    },
+    { input: 'What is 2+2?', expectedOutput: '4' },
+    { input: 'Capital of France', expectedOutput: 'Paris' },
   ],
-};
-
-// Create adapter
-const adapter = new OpenAIAdapter({
-  apiKey: process.env.OPENAI_API_KEY!,
-  model: 'gpt-4',
 });
 
-// Create scorer
-const scorer = new ExactMatchScorer();
+const adapter = MockAdapterFactory.withGenerator((input) => {
+  if (input.prompt.includes('2+2')) return '4';
+  if (input.prompt.includes('France')) return 'Paris';
+  return 'unknown';
+});
 
-// Run evaluation
-const evaluator = new Evaluator(adapter, [scorer]);
+const evaluator = new Evaluator(adapter, [new ExactMatchScorer()], {
+  concurrency: 5,
+});
+
 const result = await evaluator.evaluate(dataset);
-
 console.log(result.metrics);
 ```
 
-## Configuration
+## 4) CLI quick start
 
-Create `aegis.config.ts` in your project root:
+Create `aegis.config.ts`:
 
 ```typescript
-export const config = {
-  datasetPath: './datasets/test.json',
+import type { CLIConfig } from '@aegis-monitor/cli';
+
+const config: CLIConfig = {
+  datasetPath: './dataset.json',
   adapter: {
-    type: 'openai',
+    provider: 'mock',
     model: 'gpt-4',
+    mockResponse: '4',
   },
-  scorers: ['exactMatch'],
+  scorers: ['exact'],
   concurrency: 5,
-  thresholds: {
-    score: 0.9,
-    cost: 10.0,
-  },
+  output: { format: 'human' },
 };
+
+export default config;
 ```
 
-## CLI Usage
+Run:
 
 ```bash
-# Initialize project
-npx aegis init
-
-# Run evaluation
-npx aegis run
-
-# Compare with baseline
-npx aegis compare
-
-# Save baseline
-npx aegis baseline save
+npx aegis-monitor init
+npx aegis-monitor run --config aegis.config.ts
+npx aegis-monitor baseline save --config aegis.config.ts
+npx aegis-monitor compare --config aegis.config.ts
 ```
 
-See [API Reference](./api/README.md) for detailed documentation.
+See [API Reference](./api/README.md) and [Guides](./guides/) for detailed usage.

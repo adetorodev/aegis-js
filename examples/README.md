@@ -5,10 +5,10 @@ This directory contains example projects demonstrating Aegis Monitor usage.
 ## Available Examples
 
 - `basic-evaluation/` - Simple prompt evaluation with a single model
-- `multi-adapter/` - Compare multiple LLM providers
+- `multi-adapter-comparison/` - Compare multiple adapter behaviors
 - `custom-scorer/` - Using custom scoring functions
-- `ci-integration/` - GitHub Actions integration
-- `next.js/` - Next.js backend integration
+- `github-actions/` - GitHub Actions integration workflow
+- `nextjs-integration/` - Next.js backend integration
 
 ## Running Examples
 

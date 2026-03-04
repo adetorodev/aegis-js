@@ -78,9 +78,7 @@ describe('CostCalculator', () => {
   it('throws for unknown model', () => {
     const calculator = new CostCalculator(registry);
 
-    expect(() => calculator.calculateCost('unknown-model', 100, 100)).toThrow(
-      'No pricing found'
-    );
+    expect(() => calculator.calculateCost('unknown-model', 100, 100)).toThrow('No pricing found');
   });
 
   it('aggregates multiple costs', () => {

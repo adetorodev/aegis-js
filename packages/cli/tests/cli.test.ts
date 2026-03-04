@@ -150,5 +150,4 @@ describe('CLI config and commands', () => {
 
     await rm(dir, { recursive: true, force: true });
   });
-}
-);
+});

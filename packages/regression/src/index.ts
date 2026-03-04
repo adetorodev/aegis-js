@@ -71,10 +71,7 @@ export class BaselineManager {
     await writeFile(this.baselinePath, JSON.stringify(data, null, 2), 'utf-8');
   }
 
-  async saveFromEvaluation(
-    result: EvaluationResult,
-    dataset?: string
-  ): Promise<BaselineData> {
+  async saveFromEvaluation(result: EvaluationResult, dataset?: string): Promise<BaselineData> {
     const baseline = this.createFromEvaluation(result, dataset);
     await this.saveBaseline(baseline);
     return baseline;
@@ -176,24 +173,17 @@ export class ThresholdValidator {
     const isIncreaseRegression = metric === 'cost' || metric === 'latency';
     const delta = currentValue - baselineValue;
     const dropMagnitude = isIncreaseRegression ? delta : -delta;
-    const percentageDrop =
-      baselineValue === 0 ? 0 : (dropMagnitude / baselineValue) * 100;
+    const percentageDrop = baselineValue === 0 ? 0 : (dropMagnitude / baselineValue) * 100;
 
     const reasons: string[] = [];
 
-    if (
-      config.absoluteDrop !== undefined &&
-      dropMagnitude > config.absoluteDrop
-    ) {
+    if (config.absoluteDrop !== undefined && dropMagnitude > config.absoluteDrop) {
       reasons.push(
         `absolute threshold exceeded (${dropMagnitude.toFixed(6)} > ${config.absoluteDrop.toFixed(6)})`
       );
     }
 
-    if (
-      config.percentageDrop !== undefined &&
-      percentageDrop > config.percentageDrop
-    ) {
+    if (config.percentageDrop !== undefined && percentageDrop > config.percentageDrop) {
       reasons.push(
         `percentage threshold exceeded (${percentageDrop.toFixed(2)}% > ${config.percentageDrop.toFixed(2)}%)`
       );
