@@ -84,16 +84,22 @@ describe('BaseAdapter', () => {
         latencyMs: 10,
       }));
 
-      const [result, latencyMs] =
-        await // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (adapter as any).measureLatency(async () => {
+      vi.useFakeTimers();
+      try {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const measured = (adapter as any).measureLatency(async () => {
           await new Promise((resolve) => setTimeout(resolve, 50));
           return 'result';
         });
 
-      expect(result).toBe('result');
-      expect(latencyMs).toBeGreaterThanOrEqual(50);
-      expect(latencyMs).toBeLessThan(100);
+        await vi.advanceTimersByTimeAsync(50);
+        const [result, latencyMs] = await measured;
+
+        expect(result).toBe('result');
+        expect(latencyMs).toBe(50);
+      } finally {
+        vi.useRealTimers();
+      }
     });
   });
 });
