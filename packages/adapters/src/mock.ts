@@ -1,4 +1,4 @@
-import { ILLMAdapter, GenerateInput, GenerateOutput, AdapterError } from '@aegis-monitor/core';
+import type { ILLMAdapter, GenerateInput, GenerateOutput } from '@aegis-monitor/core';
 
 /**
  * Mock adapter for testing without API calls
@@ -44,11 +44,21 @@ export class FixedResponseAdapter implements ILLMAdapter {
  * Mock adapter that throws errors
  */
 export class ErrorAdapter implements ILLMAdapter {
-  constructor(private error: Error = new AdapterError('Mock adapter error', 'MOCK_ERROR')) {}
+  constructor(private error: Error = createMockAdapterError()) {}
 
   async generate(_input: GenerateInput): Promise<GenerateOutput> {
     throw this.error;
   }
+}
+
+function createMockAdapterError(): Error {
+  const error = new Error('Mock adapter error') as Error & {
+    code?: string;
+    originalError?: Error;
+  };
+  error.name = 'AdapterError';
+  error.code = 'MOCK_ERROR';
+  return error;
 }
 
 /**

@@ -31,7 +31,6 @@
     "evaluation"
   ],
   "author": "Aegis Monitor",
-  "license": "MIT",
   "peerDependencies": {
     "@aegis-monitor/core": "file:../core"
   },

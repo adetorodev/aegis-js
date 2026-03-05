@@ -32,7 +32,6 @@
     "testing"
   ],
   "author": "Aegis Monitor",
-  "license": "MIT",
   "dependencies": {
     "@aegis-monitor/core": "file:../core",
     "@aegis-monitor/adapters": "file:../adapters",
