@@ -18,7 +18,7 @@
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap",
     "clean": "rm -rf dist",
-    "test": "vitest run",
+    "test": "vitest run --config vitest.config.ts",
     "test:watch": "vitest",
     "type-check": "tsc --noEmit"
   },
@@ -30,7 +30,6 @@
     "google"
   ],
   "author": "Aegis Monitor",
-  "license": "MIT",
   "peerDependencies": {
     "@aegis-monitor/core": "file:../core"
   },
